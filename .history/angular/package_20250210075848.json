@@ -4,9 +4,9 @@
     "type": "module",
   "scripts": {
     "ng": "ng",
-   "start": "set NODE_OPTIONS='--experimental-vm-modules' && ng serve --force-esbuild",
+   "start": "set NODE_OPTIONS='--experimental-vm-modules' ng serve --force-esbuild",
     "api": "ts-node src/index.ts",
-    "build": "ng build --esbuild",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "jest"
   },

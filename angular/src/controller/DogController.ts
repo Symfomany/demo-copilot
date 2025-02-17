@@ -1,6 +1,4 @@
 import { Request, Response } from 'express';
-import DogService  from '../service/DogService';
-import Dog from '../entity/Dog';
 
 export default class DogController {
     private dogService: DogService;

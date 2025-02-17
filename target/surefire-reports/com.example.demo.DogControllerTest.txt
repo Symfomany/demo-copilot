@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo.DogControllerTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.933 s <<< FAILURE! - in com.example.demo.DogControllerTest
+updateDog  Time elapsed: 0.596 s  <<< ERROR!
+jakarta.servlet.ServletException: Request processing failed: java.lang.IllegalArgumentException: Name for argument of type [java.lang.Long] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.
+	at com.example.demo.DogControllerTest.updateDog(DogControllerTest.java:78)
+Caused by: java.lang.IllegalArgumentException: Name for argument of type [java.lang.Long] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.
+	at com.example.demo.DogControllerTest.updateDog(DogControllerTest.java:78)
+
+getDogById  Time elapsed: 0.019 s  <<< ERROR!
+jakarta.servlet.ServletException: Request processing failed: java.lang.IllegalArgumentException: Name for argument of type [java.lang.Long] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.
+	at com.example.demo.DogControllerTest.getDogById(DogControllerTest.java:54)
+Caused by: java.lang.IllegalArgumentException: Name for argument of type [java.lang.Long] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.
+	at com.example.demo.DogControllerTest.getDogById(DogControllerTest.java:54)
+
+deleteDog  Time elapsed: 0.015 s  <<< ERROR!
+jakarta.servlet.ServletException: Request processing failed: java.lang.IllegalArgumentException: Name for argument of type [java.lang.Long] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.
+	at com.example.demo.DogControllerTest.deleteDog(DogControllerTest.java:89)
+Caused by: java.lang.IllegalArgumentException: Name for argument of type [java.lang.Long] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.
+	at com.example.demo.DogControllerTest.deleteDog(DogControllerTest.java:89)
+

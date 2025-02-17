@@ -7,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 import lombok.*;
 
-
 /**
  * Entity class representing a Dog.
  */
@@ -23,6 +22,7 @@ public class Dog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+
     @Column(nullable = false)
     private String name;
 
@@ -31,7 +31,6 @@ public class Dog {
 
     @Column
     private int age;
-
 
     /**
      * Constructs a new Dog with the specified details.
@@ -46,6 +45,7 @@ public class Dog {
         this.name = name;
         this.breed = breed;
         this.age = age;
+
     }
 
     // Getters et Setters

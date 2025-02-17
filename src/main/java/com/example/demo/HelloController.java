@@ -10,6 +10,15 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Bonjour, monde !";
+      return "Hello, World!";
     }
+
+    // faire une fonction qui retourn "Coucou"
+    @GetMapping("/coucou")
+    public String coucou() {
+      return "Coucou";
+    }
+
+
+
 }

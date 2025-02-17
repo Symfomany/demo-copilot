@@ -3,7 +3,6 @@ package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +25,11 @@ public class DogController {
         this.dogRepository = dogRepository;
     }
 
+
+
+
+
+
     /**
      * GET /api/dogs : Get all dogs.
      *
@@ -33,8 +37,10 @@ public class DogController {
      */
     @GetMapping
     public List<Dog> getAllDogs() {
+        // Retrieve all dogs from the repository.
         return dogRepository.findAll();
     }
+
 
     /**
      * GET /api/dogs/{id} : Get a dog by ID.
@@ -70,14 +76,20 @@ public class DogController {
     public ResponseEntity<Dog> updateDog(@PathVariable Long id, @RequestBody Dog updatedDog) {
         return dogRepository.findById(id)
                 .map(dog -> {
-                    dog.setName(updatedDog.getName());
-                    dog.setBreed(updatedDog.getBreed());
-                    dog.setAge(updatedDog.getAge());
-                    dogRepository.save(dog);
-                    return ResponseEntity.ok(dog);
-                })
-                .orElseGet(() -> ResponseEntity.notFound().build());
+                    try{
+                        dog.setName(updatedDog.getName());
+                        dog.setBreed(updatedDog.getBreed());
+                        dog.setAge(updatedDog.getAge());
+                        dogRepository.save(dog);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
+                return  ResponseEntity.ok(dog);
+                }).orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+
 
     /**
      * DELETE /api/dogs/{id} : Delete a dog by ID.
@@ -87,11 +99,15 @@ public class DogController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteDog(@PathVariable Long id) {
+
         if (dogRepository.existsById(id)) {
             dogRepository.deleteById(id);
+
             return ResponseEntity.noContent().build();
         } else {
+
             return ResponseEntity.notFound().build();
         }
+
     }
 }
